@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--<?php
+
+session_start();
+if(!empty($_SESSION["login"])){
+    $login = 1; //Se a sessão login existir
+}
+else{	// Se não
+    $login = 0; 
+}	
+
+?>-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d83087e488.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menu-bar1">     
+    <ul>
+
+        <i class="fas fa-user-circle"></i><a href='#'>Conta </a></i>
+        <!--<?php
+            if($login==1){	
+        ?
+        <div class="sub-menu">
+        <ul>    
+            <li><a href='#'>Historico das compras</a><i class="fas fa-angle-right"></i></li>
+            <li><a href='#'>Dados</a><i class="fas fa-angle-right"></i></li>
+            <li><a href='#'>Logout</a><i class="fas fa-angle-right"></i></li>
+        </ul>
+        </div>
+    
+        <?php
+        }
+            else{
+                
+        ?>-->
+              
+        <div class="sub-menu">
+        <ul>    
+            <li><a href='login.php'>Login</a><i class="fas fa-angle-right"></i></li>
+            <li><a href='register.php'>Registo</a><i class="fas fa-angle-right"></i></li>
+        </ul>
+        </div>
+        <!--<?php
+        }
+        ?>-->
+        
+        </li>
+        <li><i class="fas fa-paper-plane"></i><a href='#'>Pagamento envio</a></li>
+        <li><i class="fas fa-mobile-alt"></i><a href='#'>Contactos-nos </a></li>
+
+    </ul>
+    </div>
+
+    <div class="space">
+
+    </div>
+
+    <div class="menu-bar2">
+        <ul>
+
+            <li><i class="fas fa-candy-cane"></i><a href='#'>Doces</a><i class="fas fa-angle-down"></i>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href='#'>Gomas</a><i class="fas fa-angle-right"></i></li>
+                    <li><a href='#'>Chupas</a><i class="fas fa-angle-right"></i></li>
+                    <li><a href='#'>Pastilhas</a><i class="fas fa-angle-right"></i></li>
+                </ul>
+            </div>
+            </li>
+
+            <li><i class="fas fa-cookie"></i><a href='#'>Bolachas</a><i class="fas fa-angle-down"></i>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href='#'>a</a><i class="fas fa-angle-right"></i></li>
+                    <li><a href='#'>b</a><i class="fas fa-angle-right"></i></li>
+                    <li><a href='#'>c</a><i class="fas fa-angle-right"></i></li>
+                </ul>
+            </div>
+            </li>
+            <li><i class="fas fa-birthday-cake"></i><a href='#'>Bolos</a><i class="fas fa-angle-down"></i>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href='#'>Aniversario</a><i class="fas fa-angle-right"></i></li>
+                        <li><a href='#'>Casamento</a><i class="fas fa-angle-right"></i></li>
+                        <li><a href='#'>Costumizados</a><i class="fas fa-angle-right"></i></li>
+                    </ul>
+                </div>
+                </li>
+        </ul>
+    </div>
+    
+        <div class="space-back">
+            <div class="tablediv">
+                <h2>Historico Compras</h2>
+                <br>
+            <table class="zui-table">
+                <thead>
+                    <tr>
+                        <th>Nº Ecomenda</th>
+                        <th>Estado</th>
+                        <th>Preço Total</th>
+                        <th>Data</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#</td>
+                        <td>#</td>
+                        <td>#</td>
+                        <td>#</td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>     
+        </div>
+          
+    
+    
+
+</body>
+</html>

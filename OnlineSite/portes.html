@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--<?php
+
+session_start();
+if(!empty($_SESSION["login"])){
+    $login = 1; //Se a sessão login existir
+}
+else{	// Se não
+    $login = 0; 
+}	
+
+?>-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d83087e488.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+<!--- HEADER --->
+<script src="jquery/w3data.js"></script>
+<div w3-include-html="menu.php"></div> 
+<script>
+w3IncludeHTML();
+</script>
+<!--- HEADER --->
+    
+    
+        <div class="space-back">
+            <div class="tablediv">
+                <h2>Portes</h2>
+                <br>
+            <table class="zui-table">
+                <thead>
+                    <tr>
+                        <th>Pais</th>
+                        <th>Peso</th>
+                        <th>Preço</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Portugal/Espanha</td>
+                        <td>10-50kg</td>
+                        <td>25€</td>
+                    </tr>
+                    <tr>
+                        <td>Portugal/Espanha</td>
+                        <td>50-100kg</td>
+                        <td>55€</td>
+                    </tr>
+                    <tr>
+                        <td>França/Alemanha</td>
+                        <td>10-50kg</td>
+                        <td>45€</td>
+                    </tr>
+                    <tr>
+                        <td>França/Alemanha</td>
+                        <td>50-100kg</td>
+                        <td>75€</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>     
+        </div>
+          
+    
+    
+
+</body>
+</html>

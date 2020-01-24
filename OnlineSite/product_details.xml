@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.5
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: 17-Dez-2019 às 17:54
+- Versão do servidor: 10.1.38-MariaDB
+- versão do PHP: 7.3.2
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="product_details" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="clientes">
+                CREATE TABLE `clientes` (
+                  `n_utilizador` int(11) NOT NULL AUTO_INCREMENT,
+                  `utilizador` text NOT NULL,
+                  `password` text NOT NULL,
+                  `nome` text NOT NULL,
+                  `email` text NOT NULL,
+                  PRIMARY KEY (`n_utilizador`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="encomendas">
+                CREATE TABLE `encomendas` (
+                  `n_encomenda` int(11) NOT NULL AUTO_INCREMENT,
+                  `p_encomenda` int(11) NOT NULL,
+                  `n_utilizador` int(11) NOT NULL,
+                  `m_envio` text NOT NULL,
+                  `m_pagamento` text NOT NULL,
+                  PRIMARY KEY (`n_encomenda`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="encomendas_detalhes">
+                CREATE TABLE `encomendas_detalhes` (
+                  `n_encomenda` int(11) NOT NULL,
+                  `n_produto` int(11) NOT NULL,
+                  `quantidade` int(11) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="endereco_alternativo">
+                CREATE TABLE `endereco_alternativo` (
+                  `n_utilizador` int(11) NOT NULL,
+                  `nome` text NOT NULL,
+                  `endereco` text NOT NULL,
+                  `codpostal` int(11) NOT NULL,
+                  `cidade` text NOT NULL,
+                  `pais` text NOT NULL,
+                  `provincia` text NOT NULL,
+                  `telefone1` int(11) NOT NULL,
+                  `telefone2` int(11) DEFAULT NULL,
+                  UNIQUE KEY `n_utilizador` (`n_utilizador`),
+                  CONSTRAINT `endereco_alternativo_ibfk_1` FOREIGN KEY (`n_utilizador`) REFERENCES `clientes` (`n_utilizador`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="endereco_entrega">
+                CREATE TABLE `endereco_entrega` (
+                  `n_utilizador` int(11) NOT NULL,
+                  `nome` text NOT NULL,
+                  `endereco` text NOT NULL,
+                  `codpostal` int(11) NOT NULL,
+                  `cidade` text NOT NULL,
+                  `pais` text NOT NULL,
+                  `provincia` text NOT NULL,
+                  `telefone1` int(11) NOT NULL,
+                  `telefone2` int(11) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="product">
+                CREATE TABLE `product` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `pname` int(11) NOT NULL,
+                  `imagee` int(11) NOT NULL,
+                  `price` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="produtos">
+                CREATE TABLE `produtos` (
+                  `n_produto` int(11) NOT NULL AUTO_INCREMENT,
+                  `preco` int(11) NOT NULL,
+                  `stock` int(11) NOT NULL,
+                  `nome_produto` text NOT NULL,
+                  `image` text NOT NULL,
+                  `marca` text NOT NULL,
+                  PRIMARY KEY (`n_produto`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'product_details'
+    -->
+    <database name="product_details">
+        <!-- Tabela clientes -->
+        <table name="clientes">
+            <column name="n_utilizador">27</column>
+            <column name="utilizador">qweqwe</column>
+            <column name="password">eweqweqweqwe</column>
+            <column name="nome">erwrwer</column>
+            <column name="email">qweqwerwe@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">28</column>
+            <column name="utilizador">ertertert</column>
+            <column name="password">123123</column>
+            <column name="nome"></column>
+            <column name="email">morwemfo@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">29</column>
+            <column name="utilizador">234234234</column>
+            <column name="password">123123123</column>
+            <column name="nome">qweqwe</column>
+            <column name="email">234234@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">30</column>
+            <column name="utilizador">SELECT * FROM clientes #;</column>
+            <column name="password">123123123</column>
+            <column name="nome">1231213</column>
+            <column name="email">eqweqweqweqw@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">31</column>
+            <column name="utilizador">werwergrg</column>
+            <column name="password">123123123</column>
+            <column name="nome">terwtert</column>
+            <column name="email">werergrw@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">32</column>
+            <column name="utilizador">3123123123</column>
+            <column name="password">34343434</column>
+            <column name="nome">3434</column>
+            <column name="email">1231231432312312@aesjt.pt</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">33</column>
+            <column name="utilizador">adm</column>
+            <column name="password">123123123</column>
+            <column name="nome">adm</column>
+            <column name="email">adm123@gmail.com</column>
+        </table>
+        <!-- Tabela encomendas -->
+        <table name="encomendas">
+            <column name="n_encomenda">122</column>
+            <column name="p_encomenda">11798</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao</column>
+            <column name="m_pagamento">paypal</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">123</column>
+            <column name="p_encomenda">11798</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao</column>
+            <column name="m_pagamento">paypal</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">124</column>
+            <column name="p_encomenda">11798</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao</column>
+            <column name="m_pagamento">paypal</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">125</column>
+            <column name="p_encomenda">11798</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao</column>
+            <column name="m_pagamento">paypal</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">126</column>
+            <column name="p_encomenda">11798</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao</column>
+            <column name="m_pagamento">paypal</column>
+        </table>
+        <!-- Tabela encomendas_detalhes -->
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">18</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">14</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">17</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">18</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">14</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">17</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <!-- Tabela endereco_alternativo -->
+        <table name="endereco_alternativo">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">Anguilla</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <!-- Tabela endereco_entrega -->
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr1</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">Andorra</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">Angola
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">Angola
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">Antarctica
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <table name="endereco_entrega">
+            <column name="n_utilizador">27</column>
+            <column name="nome">werewr13</column>
+            <column name="endereco">rewrwe</column>
+            <column name="codpostal">423432</column>
+            <column name="cidade">rwerew</column>
+            <column name="pais">Anguilla
+</column>
+            <column name="provincia">rwerew</column>
+            <column name="telefone1">234234</column>
+            <column name="telefone2">34</column>
+        </table>
+        <!-- Tabela product -->
+        <table name="product">
+            <column name="id">1</column>
+            <column name="pname">567567</column>
+            <column name="imagee">3234</column>
+            <column name="price">657567</column>
+        </table>
+        <table name="product">
+            <column name="id">2</column>
+            <column name="pname">34</column>
+            <column name="imagee">34</column>
+            <column name="price">4</column>
+        </table>
+        <!-- Tabela produtos -->
+        <table name="produtos">
+            <column name="n_produto">10</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">12</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asdas</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">13</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asdg</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">14</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asdd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">15</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">h</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">16</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">17</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">18</column>
+            <column name="preco">3434</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">rhrtht</column>
+            <column name="image"></column>
+            <column name="marca"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">112</column>
+            <column name="preco">1233</column>
+            <column name="stock">1</column>
+            <column name="nome_produto">asdasdasd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+        </table>
+    </database>
+</pma_xml_export>

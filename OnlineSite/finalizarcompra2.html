@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--<?php
+
+session_start();
+if(!empty($_SESSION["login"])){
+    $login = 1; //Se a sessão login existir
+}
+else{	// Se não
+    $login = 0; 
+}	
+
+?>-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d83087e488.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!--- HEADER --->
+<script src="jquery/w3data.js"></script>
+<div w3-include-html="menu.html"></div> 
+<script>
+w3IncludeHTML();
+</script>
+<!--- HEADER --->
+
+    <div class="space">
+        <!-- -->
+      <div class="header">
+          <h2>Finalizar compra</h2>
+      </div>
+         
+      <div class="Login_Form" >
+        <form method="post">
+
+        <p>
+            <select>
+                <option value="books">Endereco Primario</option>
+                <option value="html">Endereco Segundario</option>
+              </select>
+        </p>
+
+          <div class="input-group">
+            <label>Nome</label>
+          </div>
+
+          <div class="input-group">
+            <label>Endereco</label>
+          </div>
+
+          <div class="input-group">
+            <label>Codigo Postal</label>
+          </div>
+          <div class="input-group">
+            <label>Cidade
+            </label>
+          </div>
+          <div class="input-group">
+            <label>Pais
+            </label>
+          </div>
+          <div class="input-group">
+            <label>Provincia
+            </label>
+          </div>
+          <div class="input-group">
+            <label>Telefone 1
+            </label>
+          </div>
+          <div class="input-group">
+            <label>Telefone 2
+            </label>
+          </div>
+
+            <h3> Como Deseja pagar ?
+            </h3>
+            </p>
+          <p>
+            <input type="radio"  name="group1[]" value="on" >Dinheiro
+            <input type="radio" name="group1[]" value="on" checked>Cartão Multibanco
+            <input type="radio" name="group1[]" value="on">BitCoin
+          </p>
+          <p>
+          <h3> Metedo de entrega ?
+          </h3>
+          </p>
+        <p>
+          <input type="radio" name="group2[]" value="on" checked>Carro
+          <input type="radio" name="group2[]" value="on">Barco
+          <input type="radio" name="group2[]" value="on">Aviao
+        </p>
+
+          <div class="space-5"></div>
+          <div class="input-group">
+              <input type="submit" class="btn" name="action" value="Enviar">
+              </form>
+          </div>
+          <div class="space-5"></div>
+
+    </div>
+
+</body>
+</html>

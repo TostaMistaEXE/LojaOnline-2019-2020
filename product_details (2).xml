@@ -1,0 +1,1394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.5
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: 21-Jan-2020 às 17:59
+- Versão do servidor: 10.1.38-MariaDB
+- versão do PHP: 7.3.2
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="product_details" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="clientes">
+                CREATE TABLE `clientes` (
+                  `n_utilizador` int(11) NOT NULL AUTO_INCREMENT,
+                  `utilizador` text NOT NULL,
+                  `password` text NOT NULL,
+                  `nome` text NOT NULL,
+                  `email` text NOT NULL,
+                  PRIMARY KEY (`n_utilizador`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="encomendas">
+                CREATE TABLE `encomendas` (
+                  `n_encomenda` int(11) NOT NULL AUTO_INCREMENT,
+                  `p_encomenda` int(11) NOT NULL,
+                  `n_endereco` int(11) NOT NULL,
+                  `n_utilizador` int(11) NOT NULL,
+                  `m_envio` text NOT NULL,
+                  `m_pagamento` text NOT NULL,
+                  PRIMARY KEY (`n_encomenda`),
+                  KEY `n_endereco` (`n_endereco`) USING BTREE
+                ) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="encomendas_detalhes">
+                CREATE TABLE `encomendas_detalhes` (
+                  `n_encomenda` int(11) NOT NULL,
+                  `n_produto` int(11) NOT NULL,
+                  `quantidade` int(11) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="endereco">
+                CREATE TABLE `endereco` (
+                  `n_endereco` int(11) NOT NULL AUTO_INCREMENT,
+                  `n_utilizador` int(11) NOT NULL,
+                  `tipo_endereco` varchar(15) NOT NULL,
+                  `nome` text NOT NULL,
+                  `Endereco` text NOT NULL,
+                  `CodPostal` varchar(10) NOT NULL,
+                  `Cidade` varchar(20) NOT NULL,
+                  `Pais` varchar(20) NOT NULL,
+                  `Telefone1` int(20) NOT NULL,
+                  `Telefone2` int(20) DEFAULT NULL,
+                  PRIMARY KEY (`n_endereco`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="produtos">
+                CREATE TABLE `produtos` (
+                  `n_produto` int(11) NOT NULL AUTO_INCREMENT,
+                  `preco` int(11) NOT NULL,
+                  `stock` int(11) NOT NULL,
+                  `nome_produto` text NOT NULL,
+                  `image` text NOT NULL,
+                  `marca` text NOT NULL,
+                  `cat` text NOT NULL,
+                  PRIMARY KEY (`n_produto`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'product_details'
+    -->
+    <database name="product_details">
+        <!-- Tabela clientes -->
+        <table name="clientes">
+            <column name="n_utilizador">27</column>
+            <column name="utilizador">qweqwe</column>
+            <column name="password">123123123</column>
+            <column name="nome">qweqwe344</column>
+            <column name="email">qweqwerwe@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">28</column>
+            <column name="utilizador">ertertert</column>
+            <column name="password">#3123123</column>
+            <column name="nome">wrwer</column>
+            <column name="email">morwemfo@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">29</column>
+            <column name="utilizador">234234234</column>
+            <column name="password">123123123</column>
+            <column name="nome">qweqwe</column>
+            <column name="email">234234@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">30</column>
+            <column name="utilizador">SELECT * FROM clientes #;</column>
+            <column name="password">123123123</column>
+            <column name="nome">1231213</column>
+            <column name="email">eqweqweqweqw@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">31</column>
+            <column name="utilizador">werwergrg</column>
+            <column name="password">123123123</column>
+            <column name="nome">terwtert</column>
+            <column name="email">werergrw@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">32</column>
+            <column name="utilizador">3123123123</column>
+            <column name="password">34343434</column>
+            <column name="nome">3434</column>
+            <column name="email">1231231432312312@aesjt.pt</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">33</column>
+            <column name="utilizador">adm</column>
+            <column name="password">123123123</column>
+            <column name="nome">adm</column>
+            <column name="email">adm123@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">34</column>
+            <column name="utilizador">qweeqwe</column>
+            <column name="password">123123123</column>
+            <column name="nome">eqwe</column>
+            <column name="email">erer@gmail.com</column>
+        </table>
+        <table name="clientes">
+            <column name="n_utilizador">35</column>
+            <column name="utilizador">werwerwer</column>
+            <column name="password">123123123</column>
+            <column name="nome">erqweqwe</column>
+            <column name="email">er333er@gmail.com</column>
+        </table>
+        <!-- Tabela encomendas -->
+        <table name="encomendas">
+            <column name="n_encomenda">172</column>
+            <column name="p_encomenda">738</column>
+            <column name="n_endereco">9</column>
+            <column name="n_utilizador">28</column>
+            <column name="m_envio">carro</column>
+            <column name="m_pagamento">dinheiro</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">173</column>
+            <column name="p_encomenda">738</column>
+            <column name="n_endereco">10</column>
+            <column name="n_utilizador">28</column>
+            <column name="m_envio">aviao </column>
+            <column name="m_pagamento">dinheiro</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">174</column>
+            <column name="p_encomenda">738</column>
+            <column name="n_endereco">10</column>
+            <column name="n_utilizador">28</column>
+            <column name="m_envio">barco</column>
+            <column name="m_pagamento">btc</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">175</column>
+            <column name="p_encomenda">123</column>
+            <column name="n_endereco">8</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao </column>
+            <column name="m_pagamento">cb</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">176</column>
+            <column name="p_encomenda">123</column>
+            <column name="n_endereco">8</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">aviao </column>
+            <column name="m_pagamento">cb</column>
+        </table>
+        <table name="encomendas">
+            <column name="n_encomenda">177</column>
+            <column name="p_encomenda">123</column>
+            <column name="n_endereco">8</column>
+            <column name="n_utilizador">27</column>
+            <column name="m_envio">carro</column>
+            <column name="m_pagamento">btc</column>
+        </table>
+        <!-- Tabela encomendas_detalhes -->
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">122</column>
+            <column name="n_produto">123</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">123</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">18</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">14</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">17</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">125</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">18</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">14</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">17</column>
+            <column name="quantidade">12</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">14</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">126</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">127</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">135</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">135</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">136</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">136</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">137</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">137</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">138</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">138</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">139</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">139</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">140</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">140</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">140</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">140</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">141</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">141</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">142</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">142</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">143</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">143</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">144</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">144</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">145</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">145</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">146</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">146</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">147</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">147</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">148</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">148</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">149</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">149</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">150</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">150</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">151</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">151</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">152</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">152</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">153</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">153</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">154</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">154</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">155</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">155</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">156</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">156</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">156</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">156</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">157</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">157</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">158</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">158</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">159</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">159</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">160</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">160</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">161</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">161</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">162</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">162</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">163</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">163</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">164</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">164</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">165</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">165</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">166</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">166</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">167</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">167</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">168</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">168</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">169</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">169</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">170</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">170</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">171</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">171</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">172</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">172</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">173</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">173</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">13</column>
+            <column name="quantidade">3</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">7</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">12</column>
+            <column name="quantidade">11</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">174</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">175</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">176</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">1</column>
+        </table>
+        <table name="encomendas_detalhes">
+            <column name="n_encomenda">177</column>
+            <column name="n_produto">10</column>
+            <column name="quantidade">1</column>
+        </table>
+        <!-- Tabela endereco -->
+        <table name="endereco">
+            <column name="n_endereco">7</column>
+            <column name="n_utilizador">27</column>
+            <column name="tipo_endereco">alternativo</column>
+            <column name="nome">qweqwe</column>
+            <column name="Endereco">qweqwe</column>
+            <column name="CodPostal">222</column>
+            <column name="Cidade">wqewqe</column>
+            <column name="Pais">Azerbaijan</column>
+            <column name="Telefone1">3333</column>
+            <column name="Telefone2">NULL</column>
+        </table>
+        <table name="endereco">
+            <column name="n_endereco">8</column>
+            <column name="n_utilizador">27</column>
+            <column name="tipo_endereco">entrega</column>
+            <column name="nome">eqweqwe</column>
+            <column name="Endereco">eqweqw</column>
+            <column name="CodPostal">3213123</column>
+            <column name="Cidade">eqweqwe</column>
+            <column name="Pais">Germany</column>
+            <column name="Telefone1">123213</column>
+            <column name="Telefone2">NULL</column>
+        </table>
+        <!-- Tabela produtos -->
+        <table name="produtos">
+            <column name="n_produto">10</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat">gomas</column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">12</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asdas</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat">gomas</column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">13</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asdg</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat">chupas</column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">14</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asdd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">15</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">h</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">16</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">17</column>
+            <column name="preco">123</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">asd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">18</column>
+            <column name="preco">3434</column>
+            <column name="stock">123</column>
+            <column name="nome_produto">rhrtht</column>
+            <column name="image"></column>
+            <column name="marca"></column>
+            <column name="cat"></column>
+        </table>
+        <table name="produtos">
+            <column name="n_produto">112</column>
+            <column name="preco">1233</column>
+            <column name="stock">1</column>
+            <column name="nome_produto">asdasdasd</column>
+            <column name="image">9199_01_listagem.jpg</column>
+            <column name="marca"></column>
+            <column name="cat"></column>
+        </table>
+    </database>
+</pma_xml_export>
